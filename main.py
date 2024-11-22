@@ -18,7 +18,10 @@ def initGathering():
 
 def executeDataGathering():
     driver, wait = initGathering()
-    barbora = Barbora_Scrapper(driver, 'https://www.barbora.lt/')
-    barbora.Activiation()
+    barbora = Barbora_Scrapper(driver, 'https://www.barbora.lt/bakaleja/kruopos/grikiai')
+    barbora.activation()
 
 executeDataGathering()
+
+
+# sau, prideti nuolaidas ir datas
