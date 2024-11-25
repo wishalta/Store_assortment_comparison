@@ -4,6 +4,8 @@ import mysql.connector
 class DB():
     def __init__(self):
         self.connectDB()
+        # mysql.connector.connector()
+
     def connectDB(self):
            self.conn = mysql.connector.connect(
                host="127.0.0.1",  # localhost

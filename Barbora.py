@@ -16,8 +16,8 @@ class Barbora_Scrapper():
 
     def activation(self):
         self.acceptCookies()
-        self.collect_products_url()
-        self.collect_each_data()
+        hrefs = self.collect_products_url()
+        self.collect_each_data(hrefs)
 
     def acceptCookies(self):
         self.driver.get("https://www.barbora.lt/")
@@ -40,7 +40,11 @@ class Barbora_Scrapper():
             for a in lis:
                 href = a.find_element(By.TAG_NAME, 'a').get_attribute('href')
                 hrefs.append(href)
+        # self.collect_each_data(hrefs)
+        # time.sleep(200)
         return hrefs
+
+
 
     def collect_each_data(self, hrefs):
        for link in hrefs:
