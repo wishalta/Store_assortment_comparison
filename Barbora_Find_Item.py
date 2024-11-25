@@ -7,7 +7,7 @@ class Barbora_Find_Item():
         self.driver = driver
 
     def get_title(self):
-        return self.driver.find_element(By.XPATH,"/html/body/div[2]/div/div[3]/div/div[3]/div/dl[2]/dd[3]").text
+        return self.driver.find_element(By.CLASS_NAME,"b-product-info--title").text
 
     def get_size(self):
         return self.driver.find_element(By.XPATH,"/html/body/div[2]/div/div[3]/div/div[3]/div/dl[2]/dd[2]").text

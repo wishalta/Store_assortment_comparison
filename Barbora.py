@@ -6,6 +6,7 @@ from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 
 from Barbora_Find_Item import Barbora_Find_Item
+from Barbota_item import Barbora_item
 
 
 class Barbora_Scrapper():
@@ -16,8 +17,7 @@ class Barbora_Scrapper():
     def activation(self):
         self.acceptCookies()
         self.collect_products_url()
-        self.colectData
-        self.colect_each_data
+        self.collect_each_data()
 
     def acceptCookies(self):
         self.driver.get("https://www.barbora.lt/")
@@ -40,12 +40,12 @@ class Barbora_Scrapper():
             for a in lis:
                 href = a.find_element(By.TAG_NAME, 'a').get_attribute('href')
                 hrefs.append(href)
-        # return hrefs
+        return hrefs
 
-    def colect_each_data(self, hrefs):
+    def collect_each_data(self, hrefs):
        for link in hrefs:
            self.driver.get(link)
-           item = Barbora_Find_Item(self.driver)
+           item = Barbora_item(self.driver)
            item.fill()
            item.save()
            pass
